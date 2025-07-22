@@ -1,0 +1,56 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background-color: #0d0d0d;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    font-size: medium;
+  }
+  
+  .nav-links a {
+    position: relative;
+    overflow: hidden;      /* evita desbordes del pseudo-elemento */
+    padding-bottom: 0.2rem; /* ajusta si quieres más espacio al texto */
+  }
+  
+  /* 2. Crea el pseudo-elemento que será el subrayado */
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;              
+    width: 0;                
+    background-color: #ffffff;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* 3. Al hacer hover, expandimos el ancho al 100% */
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+ 
+.nav-links:hover a {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links:hover a:not(:hover) {
+  filter: blur(2px);
+  opacity: 0.6;
+}

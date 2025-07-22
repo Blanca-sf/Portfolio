@@ -1,0 +1,156 @@
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+    z-index: 0;
+    
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Fondo animado con mezcla de color */
+  .home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(72, 61, 139, 0.6);
+    animation: changeBgColor 15s infinite alternate;
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+  
+  /* Contenido siempre encima del overlay */
+  .home * {
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* Contenedor principal */
+  .home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+  }
+  
+  /* Columnas izquierda y derecha */
+  .home-left,
+  .home-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  
+  /* Título grande */
+  .home-left h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  
+  /* Texto de descripción */
+  .home-right {
+    font-size: 1.5rem;
+    max-width: 500px;
+  }
+  
+  /* Botones centrados respecto al texto */
+  .home-right .buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    align-self: flex-start;
+    position: relative;
+  }
+  
+  /* Estilo de botones */
+  .buttons a {
+    position: relative;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Línea animada al hover */
+  .buttons a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .buttons a:hover::after {
+    width: 100%;
+    opacity: 1;
+  }
+  
+  /* Efecto blur al hacer hover */
+  .buttons:hover a {
+    filter: blur(2px);
+    opacity: 0.6;
+  }
+  
+  .buttons a:hover {
+    filter: none;
+    opacity: 1;
+  }
+  
+  /* Fondo animado */
+  @keyframes changeBgColor {
+    0% {
+      background-color: rgba(72, 61, 139, 0.6);
+    }
+    50% {
+      background-color: rgba(255, 20, 147, 0.5);
+    }
+    100% {
+      background-color: rgba(72, 61, 139, 0.6);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .home-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .home-left,
+    .home-right {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .home-left h1 {
+      font-size: 3rem;
+    }
+  
+    .home-right .buttons {
+      align-self: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
