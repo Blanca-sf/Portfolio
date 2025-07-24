@@ -75,7 +75,7 @@ export default function Contact() {
                     />
                   </svg>
                 </div>
-                blanca@example.com
+                blalisf7893@gmail.com
               </a>
 
               {/* LinkedIn */}

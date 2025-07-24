@@ -85,7 +85,7 @@ export default function Hero() {
 
           <div className="py-6 md:py-8">
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl mx-auto">
-              Versatile developer bridging innovative solutions with reliable technical excellence.
+              Turning ideas into clean, functional code.
             </p>
           </div>
 
